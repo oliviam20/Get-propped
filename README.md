@@ -1,24 +1,31 @@
-# README
+# Get Propped
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+A two way market place where you can search for themed props, list props, find profiles with prop listings and pay for props.
 
-Things you may want to cover:
+4 features:
 
-* Ruby version
+ * User authentication (as a buyer or seller) - devise
+ * File uploads - carrierwave
+ * Payment integration - stripe
+ * search integration
 
-* System dependencies
+ERD can be found here
 
-* Configuration
+*
 
-* Database creation
+Wireframe can be found here
 
-* Database initialization
+*
 
-* How to run the test suite
+User stories can be found here
 
-* Services (job queues, cache servers, search engines, etc.)
+https://trello.com/b/Ov80nfWn/get-propped
 
-* Deployment instructions
 
-* ...
+
+### Extra info:
+
+ * [Stripe](https://github.com/stripe/stripe-ruby) for github stripe info
+ * [Devise](https://github.com/plataformatec/devise) for git user authentication
+ * [Carrierwave](https://github.com/carrierwaveuploader/carrierwave) for file uploads
+ * [simple search](https://rubyplus.com/articles/3381-Simple-Search-Form-in-Rails-5) Simple search example
