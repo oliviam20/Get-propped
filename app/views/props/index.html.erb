@@ -2,48 +2,7 @@
 
 <h1>Props</h1>
 
-<h2>Search</h2>
-<table>
-  <thead>
-    <tr>
-      <th></th>
-    </tr>
-  </thead>
-
-  <% @props.inspect %>
-
-  <tbody>
-    <tr>
-      <% @props.each do |prop| %>
-        <div class='task'>
-            <strong> <%= prop.name %> </strong>
-        </div>
-        <%= link_to 'Edit', edit_prop_path(props) %>
-      <% end %>
-     </tr>
-  </tbody>
-</table>
-
-<%= form_tag(props_path, method: :get) do %>
-  <%= text_field_tag :term, params[:term] %>
-  <%= submit_tag 'Search', name: nil %>
-<% end %>
-
-
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Theme</th>
-      <th>Price</th>
-      <th>User</th>
-      <th>Picture</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @props.each do |prop| %>
+    <% @props.reverse.each do |prop| %>
       <div class="row">
         <div class="col"></div>
         <div class="col">
@@ -54,7 +13,16 @@
 
               <div class="card-body">
                 <h4 class="card-title"><%= prop.name %></h4>
+                <p>$<%= prop.price %></p>
+                <p>Posted by <%= prop.user_id %></p>
                 <p class="card-text"><%= prop.theme %></p>
+                <p>
+                  <% if prop.user_id == current_user.id %>
+                  <%= link_to 'Edit', edit_prop_path(prop) %>
+                  <%= link_to 'Destroy', prop, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+                  <% end %>
+                  <%= link_to 'Show', prop %>
+                </p>
               </div>
 
               <div class="card-footer">
@@ -68,24 +36,4 @@
         <div class="col"></div>
       </div>
 
-
-
-      <!-- <tr>
-        <td><%# prop.name %></td>
-        <td><%# prop.theme %></td>
-        <td><%# prop.price %></td>
-        <td><%# prop.user_id %></td>
-        <td><%# image_tag(prop.picture_url.to_s, class: "picture_icon") %></td>
-
-        <% if prop.user_id == current_user.id %>
-        <td><%# link_to 'Edit', edit_prop_path(prop) %></td>
-        <td><%# link_to 'Destroy', prop, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-        <% end %>
-        <td><%= link_to 'Show', prop %></td>
-
-      </tr> -->
     <% end %>
-  </tbody>
-</table>
-
-<br>
