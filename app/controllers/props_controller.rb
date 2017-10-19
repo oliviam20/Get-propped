@@ -25,6 +25,7 @@ class PropsController < ApplicationController
   # POST /props.json
   def create
     @prop = Prop.new(prop_params)
+    @prop.user = current_user # devise method
     puts "----#{prop_params}"
     @prop.picture = prop_params[:picture]
     puts "----#{@prop.inspect}"
