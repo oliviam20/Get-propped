@@ -44,20 +44,46 @@
 
   <tbody>
     <% @props.each do |prop| %>
-      <tr>
-        <td><%= prop.name %></td>
-        <td><%= prop.theme %></td>
-        <td><%= prop.price %></td>
-        <td><%= prop.user_id %></td>
-        <td><%= image_tag(prop.picture_url.to_s, class: "picture_icon") %></td>
+      <div class="row">
+        <div class="col"></div>
+        <div class="col">
+
+          <div class="card-deck">
+            <div class="card", style="width: 20rem;">
+              <%= image_tag(prop.picture_url.to_s, class: "picture_icon, card-img-top", style: 'width: 20rem') %>
+
+              <div class="card-body">
+                <h4 class="card-title"><%= prop.name %></h4>
+                <p class="card-text"><%= prop.theme %></p>
+              </div>
+
+              <div class="card-footer">
+                <small class="text-muted"><%= time_ago_in_words(prop.created_at) %> ago</small>
+              </div>
+            </div>
+
+          </div> <!-- end card-deck -->
+
+        </div>
+        <div class="col"></div>
+      </div>
+
+
+
+      <!-- <tr>
+        <td><%# prop.name %></td>
+        <td><%# prop.theme %></td>
+        <td><%# prop.price %></td>
+        <td><%# prop.user_id %></td>
+        <td><%# image_tag(prop.picture_url.to_s, class: "picture_icon") %></td>
 
         <% if prop.user_id == current_user.id %>
-        <td><%= link_to 'Edit', edit_prop_path(prop) %></td>
-        <td><%= link_to 'Destroy', prop, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%# link_to 'Edit', edit_prop_path(prop) %></td>
+        <td><%# link_to 'Destroy', prop, method: :delete, data: { confirm: 'Are you sure?' } %></td>
         <% end %>
         <td><%= link_to 'Show', prop %></td>
 
-      </tr>
+      </tr> -->
     <% end %>
   </tbody>
 </table>
