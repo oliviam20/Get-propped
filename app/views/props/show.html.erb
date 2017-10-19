@@ -1,41 +1,52 @@
-<p id="notice"><%= notice %></p>
+
+
+<div class="alert alert-success" role="alert">
+  <p id="notice"><%= notice %></p>
+</div>
+
+<div class="row">
+  <div class="col"></div>
+  <div class="col">
+    <%= image_tag(@prop.picture_url.to_s, class: "picture_icon, card-img-top", style: 'width: 20rem') %>
+  </div>
+  <div class="col"></div>
+</div>
 
 <div class="row">
   <div class="col">
-    <%= image_tag(prop.picture_url.to_s, class: "picture_icon, card-img-top", style: 'width: 20rem') %>
+    <p>
+      <strong>Name:</strong>
+      <%= @prop.name %>
+    </p>
   </div>
 </div>
 
-<p>
-  <strong>Name:</strong>
-  <%= @prop.name %>
-</p>
-
-<p>
-  <strong>Theme:</strong>
-  <%= @prop.theme %>
-</p>
-
-<p>
-  <strong>Price:</strong>
-  <%= @prop.price %>
-</p>
-
-<p>
-  <strong>User:</strong>
-  <%= @prop.user_id %>
-</p>
-
-<div class="card">
-  <%# image_tag(@prop.picture_url, width: 600) if @prop.picture.present? %>
-  <%# image_tag(@prop.picture.url, alt: 'Image') if @prop.picture? %>
-  <%# image_tag @prop.image_url %>
+<div class="row">
+  <div class="col">
+    <p>
+      <strong>Theme:</strong>
+      <%= @prop.theme %>
+    </p>
+  </div>
 </div>
 
-<p>
-  <strong>Picture:</strong>
-  <%= image_tag(@prop.picture_url.to_s, class: "picture_icon") %>
-</p>
+<div class="row">
+  <div class="col">
+    <p>
+      <strong>Price:</strong>
+      $<%= @prop.price %>
+    </p>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col">
+    <p>
+      <strong>User:</strong>
+      <%= @prop.user.profile.username %>
+    </p>
+  </div>
+</div>
 
 <%= link_to 'Edit', edit_prop_path(@prop) %> |
 <%= link_to 'Back', props_path %>
