@@ -2,6 +2,33 @@
 
 <h1>Props</h1>
 
+<h2>Search</h2>
+<table>
+  <thead>
+    <tr>
+      <th></th>
+    </tr>
+  </thead>
+
+  <% @props.inspect %>
+  <tbody>
+    <tr>
+      <% @props.each do |prop| %>
+        <div class='task'>
+            <strong> <%= prop.name %> </strong>
+        </div>
+        <%= link_to 'Edit', edit_prop_path(@props) %>
+      <% end %>
+     </tr>
+  </tbody>
+</table>
+
+<%= form_tag(props_path, method: :get) do %>
+  <%= text_field_tag :term, params[:term] %>
+  <%= submit_tag 'Search', name: nil %>
+<% end %>
+
+
     <% @props.reverse.each do |prop| %>
       <div class="row">
         <div class="col"></div>
