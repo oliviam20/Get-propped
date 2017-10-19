@@ -1,5 +1,11 @@
 <p id="notice"><%= notice %></p>
 
+<div class="row">
+  <div class="col">
+    <%= image_tag(prop.picture_url.to_s, class: "picture_icon, card-img-top", style: 'width: 20rem') %>
+  </div>
+</div>
+
 <p>
   <strong>Name:</strong>
   <%= @prop.name %>

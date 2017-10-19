@@ -20,7 +20,7 @@
         <h4 class="card-title"><%= prop.name %></h4>
         <p class="card-text">
           <p>$<%= prop.price %></p>
-          <p>Posted by <%= prop.user_id %></p>
+          <p>Posted by <%= prop.user.profile.username %></p>
           <%= prop.theme %>
         <p>
           <% if prop.user_id == current_user.id %>
