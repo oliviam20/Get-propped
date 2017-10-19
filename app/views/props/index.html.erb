@@ -3,64 +3,40 @@
 <h1>Props</h1>
 
 <h2>Search</h2>
-<table>
-  <thead>
-    <tr>
-      <th></th>
-    </tr>
-  </thead>
-
-  <% @props.inspect %>
-  <tbody>
-    <tr>
-      <% @props.each do |prop| %>
-        <div class='task'>
-            <strong> <%= prop.name %> </strong>
-        </div>
-        <%= link_to 'Edit', edit_prop_path(@props) %>
-      <% end %>
-     </tr>
-  </tbody>
-</table>
 
 <%= form_tag(props_path, method: :get) do %>
   <%= text_field_tag :term, params[:term] %>
   <%= submit_tag 'Search', name: nil %>
 <% end %>
 
+<div class="container">
+  <div class="card-columns">
+  <% @props.reverse.each do |prop| %>
 
-    <% @props.reverse.each do |prop| %>
-      <div class="row">
-        <div class="col"></div>
-        <div class="col">
+    <div class="card", style="width: 20rem;">
+      <%= image_tag(prop.picture_url.to_s, class: "picture_icon, card-img-top", style: 'width: 20rem') %>
 
-          <div class="card-deck">
-            <div class="card", style="width: 20rem;">
-              <%= image_tag(prop.picture_url.to_s, class: "picture_icon, card-img-top", style: 'width: 20rem') %>
+      <div class="card-body">
+        <h4 class="card-title"><%= prop.name %></h4>
+        <p class="card-text">
+          <p>$<%= prop.price %></p>
+          <p>Posted by <%= prop.user_id %></p>
+          <%= prop.theme %>
+        <p>
+          <% if prop.user_id == current_user.id %>
+          <%= link_to 'Edit', edit_prop_path(prop) %>
+          <%= link_to 'Destroy', prop, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+          <% end %>
+          <%= link_to 'Show', prop %>
+        </p>
+      </div> <!-- end card-body div -->
 
-              <div class="card-body">
-                <h4 class="card-title"><%= prop.name %></h4>
-                <p>$<%= prop.price %></p>
-                <p>Posted by <%= prop.user_id %></p>
-                <p class="card-text"><%= prop.theme %></p>
-                <p>
-                  <% if prop.user_id == current_user.id %>
-                  <%= link_to 'Edit', edit_prop_path(prop) %>
-                  <%= link_to 'Destroy', prop, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-                  <% end %>
-                  <%= link_to 'Show', prop %>
-                </p>
-              </div>
-
-              <div class="card-footer">
-                <small class="text-muted"><%= time_ago_in_words(prop.created_at) %> ago</small>
-              </div>
-            </div>
-
-          </div> <!-- end card-deck -->
-
-        </div>
-        <div class="col"></div>
+      <div class="card-footer">
+        <small class="text-muted"><%= time_ago_in_words(prop.created_at) %> ago</small>
       </div>
 
-    <% end %>
+    </div> <!-- end card div -->
+
+  <% end %>
+  </div> <!-- end card-deck -->
+</div> <!-- end row div -->
