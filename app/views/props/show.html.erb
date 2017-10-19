@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @prop.name %>
+</p>
+
+<p>
+  <strong>Theme:</strong>
+  <%= @prop.theme %>
+</p>
+
+<p>
+  <strong>Price:</strong>
+  <%= @prop.price %>
+</p>
+
+<p>
+  <strong>User:</strong>
+  <%= @prop.user_id %>
+</p>
+
+<p>
+  <strong>Image data:</strong>
+  <%= @prop.image_data %>
+</p>
+
+<%= link_to 'Edit', edit_prop_path(@prop) %> |
+<%= link_to 'Back', props_path %>
