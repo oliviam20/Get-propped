@@ -25,6 +25,10 @@ class PropsController < ApplicationController
   # POST /props.json
   def create
     @prop = Prop.new(prop_params)
+    puts "----#{prop_params}"
+    @prop.picture = prop_params[:picture]
+    puts "----#{@prop.inspect}"
+    puts "----#{@prop.picture_url}"
 
     respond_to do |format|
       if @prop.save
@@ -69,6 +73,6 @@ class PropsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def prop_params
-      params.require(:prop).permit(:name, :theme, :price, :user_id, :image_data)
+      params.require(:prop).permit(:name, :theme, :price, :user_id, :picture)
     end
 end

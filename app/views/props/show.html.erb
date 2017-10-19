@@ -20,9 +20,15 @@
   <%= @prop.user_id %>
 </p>
 
+<div class="card">
+  <%# image_tag(@prop.picture_url, width: 600) if @prop.picture.present? %>
+  <%# image_tag(@prop.picture.url, alt: 'Image') if @prop.picture? %>
+  <%# image_tag @prop.image_url %>
+</div>
+
 <p>
-  <strong>Image data:</strong>
-  <%= @prop.image_data %>
+  <strong>Picture:</strong>
+  <%= image_tag(@prop.picture_url.to_s, class: "picture_icon") %>
 </p>
 
 <%= link_to 'Edit', edit_prop_path(@prop) %> |
