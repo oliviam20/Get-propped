@@ -1,9 +1,4 @@
 class Prop < ApplicationRecord
-  def self.search(term)
-    if term
-      where('name LIKE ?', "%#{term}%")
-    else
-      all
-    end
-  end
+  mount_uploader :picture, PictureUploader
+  belongs_to :user
 end

@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   resources :props
   resources :profiles
   devise_for :users
-  root 'pages#index'
+  root 'props#index'
   resources :charges
 
   get 'tasks', to: 'tasks#index'
