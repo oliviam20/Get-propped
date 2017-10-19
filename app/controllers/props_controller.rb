@@ -5,6 +5,21 @@ class PropsController < ApplicationController
   # GET /props.json
   def index
     @props = Prop.all
+    if params[:term]
+      @props = Prop.where('name LIKE ?', "%#{params[:term]}%")
+    else
+      @props = Prop.all
+    end
+
+    if params[:term]
+       @props = Prop.where('name LIKE ?', "%#{params[:term]}%")
+     else
+       @props = Prop.all
+     end
+  end
+
+  def props_params
+    params.require(:prop).permit(:name, :complete, :due_date, :term)
   end
 
   # GET /props/1
