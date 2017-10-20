@@ -21,6 +21,8 @@ html, body {
   overflow-x: hidden;
 } // This disables horizontal scrolling
 
+
+// Card body
 .card-columns {
   @include media-breakpoint-only(sm) {
     column-count: 1;
@@ -36,3 +38,10 @@ html, body {
   }
   display: inline-block;
 }
+// end card body
+
+// nav
+.nav-links {
+  margin-left: 20px;
+}
+// end nav
