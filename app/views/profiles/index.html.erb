@@ -1,11 +1,32 @@
 <%= render 'partials/nav' %>
 
-<div class="container">
+<div class="container profile-page">
   <p id="notice"><%= notice %></p>
 
-  <h1>Profiles</h1>
+  <h1>Profile</h1>
 
-  <table>
+  <% @profiles.each do |profile| %>
+  <% if current_user.id == profile.user_id %>
+    <p class="profile-para">
+      Username: <%= profile.username %>
+    </p>
+    <p class="profile-para">
+      Address: <%= profile.address %>
+    </p>
+    <p class="profile-para">
+      Full Name: <%= profile.full_name %>
+    </p>
+    <p class="profile-para">
+      ID Number: <%= profile.user_id %>
+    </p>
+
+    <%= link_to '', edit_profile_path(profile), class: "fa fa-pencil-square-o fa-3x fa-button", style: "color:#FF69B4" %>
+    <%= link_to "", root_path, class: "fa fa-undo fa-3x fa-button", style: "color:#FF69B4" %>
+
+    <% end %>
+  <% end %>
+
+  <!-- <table>
     <thead>
       <tr>
         <th>Username</th>
@@ -29,6 +50,6 @@
         </tr>
       <% end %>
     </tbody>
-  </table>
+  </table> -->
 
 </div>
