@@ -16,6 +16,13 @@
 
 @import "bootstrap";
 
+// logo
+img {
+    border-style: none;
+    width: 300px;
+    align-items: left;
+}
+
 html, body {
   max-width: 100%;
   overflow-x: hidden;
