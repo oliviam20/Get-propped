@@ -1,13 +1,15 @@
-
-
+<% if flash[:notice] %>
 <div class="alert alert-success" role="alert">
   <p id="notice"><%= notice %></p>
 </div>
+<% end %>
 
 <div class="row">
   <div class="col"></div>
   <div class="col">
-    <%= image_tag(@prop.picture_url.to_s, class: "picture_icon, card-img-top", style: 'width: 20rem') %>
+    <% if @prop.picture.present? %>
+      <%= image_tag(@prop.picture_url.to_s, class: "picture_icon, card-img-top") %>
+    <% end %>
   </div>
   <div class="col"></div>
 </div>

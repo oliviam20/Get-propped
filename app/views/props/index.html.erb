@@ -9,12 +9,12 @@
   <%= submit_tag 'Search', name: nil %>
 <% end %>
 
-<div class="container">
-  <div class="card-columns">
+
+<div class="card-columns">
   <% @props.reverse.each do |prop| %>
 
-    <div class="card", style="width: 20rem;">
-      <%= image_tag(prop.picture_url.to_s, class: "picture_icon, card-img-top", style: 'width: 20rem') %>
+    <div class="card">
+      <%= image_tag(prop.picture_url.to_s, class: "picture_icon, card-img-top") %>
 
       <div class="card-body">
         <h4 class="card-title"><%= prop.name %></h4>
@@ -22,6 +22,7 @@
           <p>$<%= prop.price %></p>
           <p>Posted by <%= prop.user.profile.username %></p>
           <%= prop.theme %>
+        </p>
         <p>
           <% if prop.user_id == current_user.id %>
           <%= link_to 'Edit', edit_prop_path(prop) %>
@@ -38,5 +39,4 @@
     </div> <!-- end card div -->
 
   <% end %>
-  </div> <!-- end card-deck -->
-</div> <!-- end row div -->
+</div> <!-- end card-column -->
