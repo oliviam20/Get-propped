@@ -16,6 +16,10 @@
 
 @import "bootstrap";
 
+* {
+  font-family: 'Roboto', sans-serif;
+}
+
 // logo
 img {
     border-style: none;
@@ -71,7 +75,7 @@ h1 {
 
 // profile
 .profile-page {
-  text-align: center; 
+  text-align: center;
 }
 
 .profile-fa-button:hover {
