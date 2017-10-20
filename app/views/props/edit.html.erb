@@ -1,6 +1,11 @@
-<h1>Editing Prop</h1>
+<%= render 'partials/nav' %>
 
-<%= render 'form', prop: @prop %>
+<div class="container">
+  <h1>Editing Prop</h1>
 
-<%= link_to 'Show', @prop %> |
-<%= link_to 'Back', props_path %>
+  <%= render 'form', prop: @prop %>
+
+  <%= link_to 'Show', @prop %> |
+  <%= link_to 'Back', props_path %>
+
+</div>
