@@ -16,6 +16,10 @@
 
 @import "bootstrap";
 
+* {
+  font-family: 'Roboto', sans-serif;
+}
+
 // logo
 img {
     border-style: none;
@@ -63,3 +67,26 @@ html, body {
   }
 }
 // end nav
+
+h1 {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+// profile
+.profile-page {
+  text-align: center;
+}
+
+.fa-button:hover {
+  text-decoration: none;
+  background-color: transparent;
+  color: pink;
+}
+// end profile
+
+// edit profile
+.profile-edit-page {
+  text-align: center;
+}
+// end edit profile
