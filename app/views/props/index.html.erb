@@ -15,8 +15,8 @@
 
   <div class="card-columns">
     <% @props.reverse.each do |prop| %>
-
-      <div class="card" data-aos="fade-up" data-aos-duration="2000">
+<!-- data-aos="fade-up" data-aos-duration="2000" -->
+      <div class="card">
         <%= image_tag(prop.picture_url.to_s, class: "picture_icon, card-img-top") %>
 
         <div class="card-body">
