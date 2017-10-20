@@ -56,3 +56,20 @@ html, body {
   }
 }
 // end nav
+
+h1 {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+// profile
+.profile-page {
+  text-align: center; 
+}
+
+.profile-fa-button:hover {
+  text-decoration: none;
+  background-color: transparent;
+  color: pink;
+}
+// end profile
