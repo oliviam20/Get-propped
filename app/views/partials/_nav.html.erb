@@ -13,13 +13,13 @@
     <div class="collapse navbar-collapse justify-content-end" id="navbarNavDropdown">
       <ul class="navbar-nav">
 
-        <% if user_signed_in? %>
+        <!-- <% if user_signed_in? %>
           <li class="nav-item">
             <p class="navvy">
-              Hi <%= current_user.profile.username %>!
+              Hi <%# current_user.profile.username %>!
             </p>
           </li>
-        <% end %>
+        <% end %> -->
 
         <li class="nav-item">
           <p><%= link_to '', new_prop_path, class:"fa fa-plus-circle fa-3x new-prop-button fa-buttons", style: "color:#FF69B4" %></p>
