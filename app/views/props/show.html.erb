@@ -48,5 +48,11 @@
   </div>
 </div>
 
+<script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+        data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
+        data-description= <%= "Paying for prop #{@prop.name}" %>
+        data-amount= <%= @prop.price * 100 %>
+        data-locale="auto"></script>
+
 <%= link_to 'Edit', edit_prop_path(@prop) %> |
 <%= link_to 'Back', props_path %>
