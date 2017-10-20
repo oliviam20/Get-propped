@@ -1,60 +1,64 @@
-<% if flash[:notice] %>
-  <div class="alert alert-success" role="alert">
-    <p id="notice"><%= notice %></p>
-  </div>
-<% end %>
+<%= render 'partials/nav' %>
 
-<div class="row">
-  <div class="col"></div>
-  <div class="col">
-    <% if @prop.picture.present? %>
-      <%= image_tag(@prop.picture_url.to_s, class: "picture_icon, card-img-top") %>
-    <% end %>
+<div class="container">
+  <% if flash[:notice] %>
+    <div class="alert alert-success" role="alert">
+      <p id="notice"><%= notice %></p>
+    </div>
+  <% end %>
+
+  <div class="row">
+    <div class="col"></div>
+    <div class="col">
+      <% if @prop.picture.present? %>
+        <%= image_tag(@prop.picture_url.to_s, class: "picture_icon, card-img-top") %>
+      <% end %>
+    </div>
+    <div class="col"></div>
   </div>
-  <div class="col"></div>
+
+  <div class="row">
+    <div class="col">
+      <p>
+        <strong>Name:</strong>
+        <%= @prop.name %>
+      </p>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col">
+      <p>
+        <strong>Theme:</strong>
+        <%= @prop.theme %>
+      </p>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col">
+      <p>
+        <strong>Price:</strong>
+        $<%= @prop.price %>
+      </p>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col">
+      <p>
+        <strong>User:</strong>
+        <%= @prop.user.profile.username %>
+      </p>
+    </div>
+  </div>
+
+  <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+          data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
+          data-description= <%= "Paying for prop #{@prop.name}" %>
+          data-amount= <%= @prop.price * 100 %>
+          data-locale="auto"></script>
+
+  <%= link_to 'Edit', edit_prop_path(@prop) %> |
+  <%= link_to 'Back', props_path %>
 </div>
-
-<div class="row">
-  <div class="col">
-    <p>
-      <strong>Name:</strong>
-      <%= @prop.name %>
-    </p>
-  </div>
-</div>
-
-<div class="row">
-  <div class="col">
-    <p>
-      <strong>Theme:</strong>
-      <%= @prop.theme %>
-    </p>
-  </div>
-</div>
-
-<div class="row">
-  <div class="col">
-    <p>
-      <strong>Price:</strong>
-      $<%= @prop.price %>
-    </p>
-  </div>
-</div>
-
-<div class="row">
-  <div class="col">
-    <p>
-      <strong>User:</strong>
-      <%= @prop.user.profile.username %>
-    </p>
-  </div>
-</div>
-
-<script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
-        data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
-        data-description= <%= "Paying for prop #{@prop.name}" %>
-        data-amount= <%= @prop.price * 100 %>
-        data-locale="auto"></script>
-
-<%= link_to 'Edit', edit_prop_path(@prop) %> |
-<%= link_to 'Back', props_path %>

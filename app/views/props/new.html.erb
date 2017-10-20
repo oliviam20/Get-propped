@@ -1,5 +1,10 @@
-<h1>New Prop</h1>
+<%= render 'partials/nav' %>
 
-<%= render 'form', prop: @prop %>
+<div class="container">
+  <h1>New Prop</h1>
 
-<%= link_to 'Back', props_path %>
+  <%= render 'form', prop: @prop %>
+
+  <%= link_to 'Back', props_path %>
+
+</div>
