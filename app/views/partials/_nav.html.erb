@@ -1,4 +1,4 @@
-<nav class="navbar sticky-top navbar-expand-lg navbar-dark bg-dark">
+<nav class="navbar sticky-top navbar-expand-lg ">
 
   <div class="container">
     <%# link_to "Get Propped!", prop_path(:id) %>
@@ -13,26 +13,28 @@
 
         <% if user_signed_in? %>
           <li class="nav-item">
-            <p>
-              Hi <%= current_user.profile.username %>
+            <p class="navvy">
+              Hi <%= current_user.profile.username %>!
             </p>
           </li>
         <% end %>
 
         <li class="nav-item">
-          <%= link_to 'New Prop', new_prop_path %>
+          <p><%= link_to '', new_prop_path, class:"fa fa-plus-circle fa-3x new-prop-button fa-buttons", style: "color:#FF69B4" %></p>
         </li>
 
         <li class="nav-item">
-          <%= link_to "Profile", profiles_path(@user_id) %>
+          <p><%= link_to "", profiles_path(@user_id), class: "fa fa-user-o fa-3x edit-user-button fa-buttons", style: "color:#FF69B4" %></p>
         </li>
 
         <li>
-          <% if user_signed_in? %>
-            <%= link_to('Logout', destroy_user_session_path, method: :delete) %>
-          <% else %>
-            <%= link_to('Login', new_user_session_path)  %>
-          <% end %>
+          <p>
+            <% if user_signed_in? %>
+              <%= link_to('', destroy_user_session_path, class: "fa fa-sign-out fa-3x sign-out-button fa-buttons", style: "color:#FF69B4", method: :delete) %>
+            <% else %>
+              <%= link_to('Login', new_user_session_path)  %>
+            <% end %>
+          </p>
         </li>
 
       </ul>

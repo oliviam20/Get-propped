@@ -41,7 +41,18 @@ html, body {
 // end card body
 
 // nav
-.nav-links {
+.navvy {
   margin-left: 20px;
+  font-size: 22px;
+  font-weight: bold;
+}
+
+.fa-buttons {
+  margin-left: 20px;
+  &:hover {
+    text-decoration: none;
+    background-color: transparent;
+    color: pink;
+  }
 }
 // end nav
