@@ -11,13 +11,13 @@
     <div class="collapse navbar-collapse justify-content-end" id="navbarNavDropdown">
       <ul class="navbar-nav">
 
-        <% if user_signed_in? %>
+        <!-- <% if user_signed_in? %>
           <li class="nav-item">
             <p>
-              Hi <%= current_user.profile.username %>
+              Hi <%# current_user.profile.username %>
             </p>
           </li>
-        <% end %>
+        <% end %> -->
 
         <li class="nav-item">
           <%= link_to 'New Prop', new_prop_path %>
