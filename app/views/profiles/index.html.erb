@@ -1,0 +1,55 @@
+<%= render 'partials/nav' %>
+
+<div class="container profile-page">
+  <p id="notice"><%= notice %></p>
+
+  <h1>Profile</h1>
+
+  <% @profiles.each do |profile| %>
+  <% if current_user.id == profile.user_id %>
+    <p class="profile-para">
+      Username: <%= profile.username %>
+    </p>
+    <p class="profile-para">
+      Address: <%= profile.address %>
+    </p>
+    <p class="profile-para">
+      Full Name: <%= profile.full_name %>
+    </p>
+    <p class="profile-para">
+      ID Number: <%= profile.user_id %>
+    </p>
+
+    <%= link_to '', edit_profile_path(profile), class: "fa fa-pencil-square-o fa-3x fa-button", style: "color:#FF69B4" %>
+    <%= link_to "", root_path, class: "fa fa-undo fa-3x fa-button", style: "color:#FF69B4" %>
+
+    <% end %>
+  <% end %>
+
+  <!-- <table>
+    <thead>
+      <tr>
+        <th>Username</th>
+        <th>Address</th>
+        <th>Full name</th>
+        <th>User</th>
+        <th colspan="3"></th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @profiles.each do |profile| %>
+        <tr>
+          <td><%= profile.username %></td>
+          <td><%= profile.address %></td>
+          <td><%= profile.full_name %></td>
+          <td><%= profile.user_id %></td>
+          <td><%= link_to 'Show', profile_path(profile.user_id) %></td>
+          <td><%= link_to 'Edit', edit_profile_path(profile) %></td>
+          <td><%= link_to 'Destroy', profile, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table> -->
+
+</div>

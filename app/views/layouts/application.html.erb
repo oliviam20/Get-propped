@@ -3,12 +3,26 @@
   <head>
     <title>GetPropped</title>
     <%= csrf_meta_tags %>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+
+    <script src="https://use.fontawesome.com/bbdaecabea.js"></script> <!-- font awesome cdn -->
+
+    <link rel="stylesheet" href="https://cdn.rawgit.com/michalsnik/aos/2.1.1/dist/aos.css"> <!-- fade in fade out cdn -->
+    <script src="https://cdn.rawgit.com/michalsnik/aos/2.1.1/dist/aos.js"></script> <!-- fade in fade out cdn -->
+
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet"> <!-- google font -->
+
   </head>
 
   <body>
+
+    <!-- <p class="notice"><%# notice %></p>
+    <p class="alert"><%# alert %></p> -->
+
     <%= yield %>
+
   </body>
 </html>

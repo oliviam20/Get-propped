@@ -1,0 +1,43 @@
+<%= form_with(model: prop, local: true) do |form| %>
+  <% if prop.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(prop.errors.count, "error") %> prohibited this prop from being saved:</h2>
+
+      <ul>
+      <% prop.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :name %>
+    <%= form.text_field :name, id: :prop_name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :theme %>
+    <%= form.text_field :theme, id: :prop_theme %>
+  </div>
+
+  <div class="field">
+    <%= form.label :price %>
+    <%= form.text_field :price, id: :prop_price %>
+  </div>
+
+  <!-- <div class="field">
+    <%# form.label :user_id %>
+    <%# form.number_field :user_id, id: :prop_user_id %>
+  </div> -->
+
+  <div class="field">
+    <%= form.label :picture %>
+    <%= form.file_field :picture %>
+    <%= form.hidden_field :picture_cache %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

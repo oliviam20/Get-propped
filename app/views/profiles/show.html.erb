@@ -1,0 +1,28 @@
+<%= render 'partials/nav' %>
+
+<div class="container">
+  <p id="notice"><%= notice %></p>
+
+  <p>
+    <strong>Username:</strong>
+    <%= @profile.username %>
+  </p>
+
+  <p>
+    <strong>Address:</strong>
+    <%= @profile.address %>
+  </p>
+
+  <p>
+    <strong>Full name:</strong>
+    <%= @profile.full_name %>
+  </p>
+
+  <p>
+    <strong>User:</strong>
+    <%= @profile.user_id %>
+  </p>
+
+  <%= link_to 'Edit', edit_profile_path(@profile) %> |
+  <%= link_to 'Back', profiles_path %>
+</div>

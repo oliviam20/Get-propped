@@ -1,0 +1,49 @@
+<%= render 'partials/nav' %>
+
+<div class="container">
+  <p id="notice"><%= notice %></p>
+
+  <h1>Props</h1>
+
+  <h2>Search</h2>
+
+  <%= form_tag(props_path, method: :get) do %>
+    <%= text_field_tag :term, params[:term] %>
+    <%= submit_tag 'Search', name: nil %>
+  <% end %>
+
+
+  <div class="card-columns">
+    <% @props.reverse.each do |prop| %>
+<!-- data-aos="fade-up" data-aos-duration="2000" -->
+      <div class="card">
+        <%= image_tag(prop.picture_url.to_s, class: "picture_icon, card-img-top") %>
+
+        <div class="card-body">
+          <h4 class="card-title"><%= prop.name %></h4>
+          <p class="card-text">
+            <p>$<%= prop.price %></p>
+            <p>Posted by <%= prop.user.profile.username %></p>
+            <%= prop.theme %>
+          </p>
+          <p>
+            <% if prop.user_id == current_user.id %>
+            <%= link_to 'Edit', edit_prop_path(prop) %>
+            <%= link_to 'Destroy', prop, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+            <% end %>
+            <%= link_to 'Show', prop %>
+          </p>
+        </div> <!-- end card-body div -->
+
+        <div class="card-footer">
+          <small class="text-muted"><%= time_ago_in_words(prop.created_at) %> ago</small>
+        </div>
+
+      </div> <!-- end card div -->
+
+    <% end %>
+  </div> <!-- end card-column -->
+</div>
+
+<script type="text/javascript" src="fadein.js"></script>
+<script>AOS.init();</script><!-- This is for the fade in effects -->

@@ -1,0 +1,10 @@
+<%= render 'partials/nav' %>
+
+<div class="container profile-edit-page">
+  <h1>Editing Profile</h1>
+
+  <%= render 'form', profile: @profile %>
+
+  <%= link_to '', profiles_path, class: "fa fa-undo fa-4x fa-button", style: "color:#FF69B4" %>
+
+</div>
