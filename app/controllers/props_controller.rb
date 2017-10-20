@@ -4,6 +4,10 @@ class PropsController < ApplicationController
   # GET /props
   # GET /props.json
   def index
+
+    @profile = current_user.profile
+    redirect_to new_profile_url if @profile.nil?
+
     @props = Prop.all
     if params[:term]
       @props = Prop.where('name LIKE ?', "%#{params[:term]}%")
