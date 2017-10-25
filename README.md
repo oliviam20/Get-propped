@@ -19,6 +19,7 @@ We have Users on our get propped online store with one Profile, this user is abl
 We removed the themes table as we aimed for an MVP in the given timeframe and implemented theme as part of the form field for our prop instead. In the future we'd be looking to have a theme table to have many prop themes so users are able to sort by themes of props.
 
 * [ERD](https://github.com/moiscraycray/Get-propped/blob/master/Screen%20Shot%202017-10-19%20at%202.13.18%20PM.png) designed with db designer
+
 ![alt text](https://github.com/moiscraycray/Get-propped/blob/master/Screen%20Shot%202017-10-19%20at%202.13.18%20PM.png)
 
 ### Wireframe
@@ -45,8 +46,11 @@ You will also see your username in the Navbar
 On our index page, we have a navbar where you can create a new prop or check your profile.
 
 * [Get propped index](https://github.com/moiscraycray/Get-propped/blob/master/get%20propped%20images/Homepage.png)
+
  ![alt text](https://github.com/moiscraycray/Get-propped/blob/master/get%20propped%20images/Homepage.png)
+
 * [Create new Prop](https://github.com/moiscraycray/Get-propped/blob/master/get%20propped%20images/09-New%20Prop.png)
+
  ![alt text](https://github.com/moiscraycray/Get-propped/blob/master/get%20propped%20images/09-New%20Prop.png)
 
 **Note:** that you are unable to edit another user's props you're only able to edit you're own. As a user you are also only able to buy other user's props and note your own.
@@ -54,10 +58,13 @@ On our index page, we have a navbar where you can create a new prop or check you
 Once you select an prop to purchase, you'll be asked to input your payment information, once submitted you'll see a confirmation page
 
 * [Item purchase](https://github.com/moiscraycray/Get-propped/blob/master/get%20propped%20images/05-Item.png)
+
 ![alt text](https://github.com/moiscraycray/Get-propped/blob/master/get%20propped%20images/05-Item.png)
 * [Payment information](https://github.com/moiscraycray/Get-propped/blob/master/get%20propped%20images/06-Check%20Out.png)
+
 ![alt text](https://github.com/moiscraycray/Get-propped/blob/master/get%20propped%20images/06-Check%20Out.png)
 * [Confirmation page](https://github.com/moiscraycray/Get-propped/blob/master/get%20propped%20images/07-Confirmation%20Page.png)
+
 ![alt text](https://github.com/moiscraycray/Get-propped/blob/master/get%20propped%20images/07-Confirmation%20Page.png)
 
 **Note:** this requires the a test card from the strip webpage and the heroku server request specifically for stripe which can be achieved through the following steps:
@@ -77,6 +84,7 @@ $ heroku open
 The user stories we were targeting users who are in the market for props to buy or sell. On our online store, you have the ability to set up your props to sell. There is also an index page where you have the ability to purchase other users props.
 
 * [Get Propped Trelloboard](https://trello.com/b/Ov80nfWn/get-propped)
+
 ![alt text](https://trello.com/b/Ov80nfWn/get-propped)
 
 ### Branches and deployment
