@@ -4,7 +4,7 @@ A two way market place where you can search for themed props, list props, find p
 
 **Heroku**
 It's live on Heroku which you can check out [here](https://getpropped.herokuapp.com/)
-![alt text](https://getpropped.herokuapp.com/)
+
 
 ## 4 features:
 
@@ -27,10 +27,15 @@ Our wireframe demonstrates the online store site flow.
 
 We have the login page - where you can sign up, and will be asked to create a Profile.
 * [Login](https://github.com/moiscraycray/Get-propped/blob/master/get%20propped%20images/Login.png)
+
 ![alt text](https://github.com/moiscraycray/Get-propped/blob/master/get%20propped%20images/Login.png)
+
 * [Sign up](https://github.com/moiscraycray/Get-propped/blob/master/get%20propped%20images/Signup.png)
+
 ![alt text](https://github.com/moiscraycray/Get-propped/blob/master/get%20propped%20images/Signup.png)
+
 * [Profile page](https://github.com/moiscraycray/Get-propped/blob/master/get%20propped%20images/08-Profile.png)
+
 ![alt text](https://github.com/moiscraycray/Get-propped/blob/master/get%20propped%20images/08-Profile.png)
 
 **Note:** Once you've signed up and create a profile, when you sign in you will be sent through to the index page for all props available for sale.
