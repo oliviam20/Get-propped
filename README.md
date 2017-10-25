@@ -85,7 +85,7 @@ The user stories we were targeting users who are in the market for props to buy 
 
 * [Get Propped Trelloboard](https://trello.com/b/Ov80nfWn/get-propped)
 
-![alt text](https://trello.com/b/Ov80nfWn/get-propped)
+
 
 ### Branches and deployment
 
